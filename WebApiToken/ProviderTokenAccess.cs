@@ -37,6 +37,8 @@ namespace WebApiToken
             // emitindo o token com informacoes extras
             // se o usuário existe
             var identyUser = new ClaimsIdentity(context.Options.AuthenticationType);
+            identyUser.AddClaim(new Claim(ClaimTypes.Role, "user"));
+
             context.Validated(identyUser);
         }
 

@@ -4,6 +4,7 @@ using Microsoft.Owin;
 using Owin;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Owin.Cors;
 
 namespace WebApiToken
 {
@@ -24,6 +25,9 @@ namespace WebApiToken
                         
             ConfigureAccessToken(app);
 
+            //habilitando o CORS
+            app.UseCors(CorsOptions.AllowAll);
+           
             // ativando configuração WebApi
             app.UseWebApi(config);
         }
@@ -42,7 +46,7 @@ namespace WebApiToken
                 TokenEndpointPath = new PathString("/token"),
 
                 //Configurando por quanto tempo um token de acesso já forncedido valerá (AccessTokenExpireTimeSpan).
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(5),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(1),
 
                 //Como verificar usuário e senha para fornecer tokens de acesso? Precisamos configurar o Provider dos tokens
                 Provider = new ProviderTokenAccess()

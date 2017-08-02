@@ -1,0 +1,35 @@
+﻿<br />
+<div class="row">
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+    <div class="col-md-8">
+        <h1>Lista de produtos:</h1>
+        
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Quantidade em estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="product in products">
+                    <td>
+                        {{ product.Id }}
+                    </td>
+                    <td>
+                        {{ product.Description }}
+                    </td>
+                    <td>
+                        {{ product.QuantityInStock }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>

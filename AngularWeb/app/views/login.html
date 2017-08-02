@@ -1,0 +1,16 @@
+﻿<form role="form">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h2 class="form-login-heading">Entrar</h2>
+            <input type="text" class="form-control" placeholder="Usuário" data-ng-model="loginData.userName" required autofocus>
+            <br />
+            <input type="password" class="form-control" placeholder="Senha" data-ng-model="loginData.password" required>
+            <br />
+            <button class="btn btn-md btn-info btn-block" type="submit" data-ng-click="login()">Login</button>
+            <br />
+            <div data-ng-hide="message == ''" class="alert alert-danger">
+                {{message}}
+            </div>
+        </div>
+    </div>
+</form>
